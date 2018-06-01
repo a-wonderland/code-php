@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDO</title>
+
+  <style>
+  ul{
+    margin: 0;
+  }
+
+  #done li span{
+    text-decoration: line-through;
+    color: #9f2d14;
+  }
+
+  h3 span{
+    background: #54abf2;
+    padding: 5px;
+  }
+
+  #wrap{
+    /* width: 800px;
+    height: 800px;
+    margin: auto;
+    border: 1px solid #9f2d14; */
+  }
+  </style>
+</head>
+<body>
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#new_task button").click(function(){
+      var text = $("#new_task input").val();
+      // when text is empty
+      if(!text) return false;
+
+    var li = buildItems(text);
+      // append li to ul
+      $("#tasks ul").append(li);
+      // update list
+        $("h3 span").html($("#tasks li").length);
+      $("#new_task input").val("").focus();
+
+    });
+
+    $("#new_task input").keydown(function(e){
+      if(e.which == 13){
+        $("#new_task button").click();
+      }
+    });
+
+  });
+
+  function buildItems(text){
+    var msg = $("<span>").html(text);
+    var li = $("<li>").html(msg);
+    // add delete button
+    var del = $("<a>", {href:'#'}).html("&times;");
+    // append delete to li
+    li.append(del);
+    // checkbox
+    var checkbox = $("<input>", {type:"checkbox"});
+    li.prepend(checkbox);
+
+    del.click(function(){
+      $(this).parent().remove();
+      // update list
+        $("h3 span").html($("#tasks li").length);
+    });
+
+    checkbox.click(function(){
+        if($(this).is(":checked")){
+          $(this).parent().appendTo("#done ul");
+        }else{
+          $(this).parent().appendTo("#tasks ul");
+        }
+        // update list
+          $("h3 span").html($("#tasks li").length);
+    });
+
+    return li;
+  }
+  </script>
+
+<div id="wrap">
+  <h3>Tasks List <span>0<span> </h3>
+  <hr>
+  <div id="tasks">
+    <ul></ul>
+  </div>
+
+  <div id="done">
+    <ul></ul>
+  </div>
+
+  <div id="new_task">
+    <input type="text">
+    <button>+</button>
+  </div>
+</div>
+
+</body>
+</html>

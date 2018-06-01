@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<ul></ul>
+<input type="text">
+<button>+</button>
+
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $("button").click(function(){
+    var text = $("input").val();
+    if(!text) return false;
+    // create li
+    var li = $("<li>").html(text);
+    //create <a href='#'>X</a>
+    var del = $("<a>", {href:'#'}).html("&times;");
+    $(li).append(del);
+    // append to ul
+    $("ul").append(li);
+    // clear input and focus
+    $("input").val("").focus();
+
+    // delete function
+    $(del).click(function(){
+      var parent = $(this).parent();
+      $(parent).remove();
+    });
+
+  });
+
+  $("input").keydown(function(event){
+    if(event.which == 13){
+      $("button").click();
+    }
+  });
+
+  </script>
+
+</body>
+</html>

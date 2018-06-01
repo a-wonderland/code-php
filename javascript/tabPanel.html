@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tab Panel</title>
+  <style>
+    .bar {
+      list-style: none;
+      margin: 0;
+      background: #eff942;
+      overflow: hidden;
+      padding: 10px 10px 0px 10px;
+    }
+
+    .bar li {
+      float: left;
+      background: #aab61b;
+      padding: 8px 20px;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .panel {
+      min-height: 200px;
+      padding: 20px;
+      border: 1px solid #eff942;
+    }
+
+    #panel2 {
+      display: none;
+    }
+
+    #tab2 {
+      background: #f4f1f6;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="bar">
+    <li id="tab1" onclick="tab1()">Tab One</li>
+    <li id="tab2" onclick="tab2()">Tab Two</li>
+  </ul>
+  <div class="panel" id="panel1">This is panel one.</div>
+  <div class="panel" id="panel2">This is panel two.</div>
+  <script>
+    function get(obj) {
+      return document.getElementById(obj);
+    }
+
+    function tab1(){
+      get("panel1").style.display = "block";
+      get("panel2").style.display = "none";
+      get("tab1").style.background="#aab61b";
+      get("tab2").style.background="#f4f1f6";
+    }
+
+    function tab2(){
+      get("panel2").style.display = "block";
+      get("panel1").style.display = "none";
+      get("tab2").style.background="#aab61b";
+      get("tab1").style.background="#f4f1f6";
+    }
+  </script>
+</body>
+
+</html>

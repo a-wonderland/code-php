@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDO</title>
+</head>
+<body>
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#new_task button").click(function(){
+      var text = $("#new_task input").val();
+      // when text is empty
+      if(!text) return false;
+
+      var li = $("<li>").html(text);
+      // add delete button
+      var del = $("<a>", {href:'#'}).html("&times;");
+      // append delete to li
+      li.append(del);
+
+      del.click(function(){
+        $(this).parent().remove();
+      });
+
+      // append li to ul
+      $("#tasks ul").append(li);
+      $("#new_task input").val("").focus();
+
+    });
+
+    $("#new_task input").keydown(function(e){
+      if(e.which == 13){
+        $("#new_task button").click();
+      }
+    });
+
+  });
+  </script>
+
+<div id="tasks">
+  <ul></ul>
+</div>
+
+<div id="done">
+  <ul></ul>
+</div>
+
+<div id="new_task">
+  <input type="text">
+  <button>+</button>
+</div>
+
+</body>
+</html>

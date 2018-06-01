@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slide Menu</title>
+  <style>
+    .box {
+      border: 1px solid #bff156;
+      width: 300px;
+      margin-bottom:10px;
+    }
+    .boxTitle {
+      font-size: 14px;
+      background: #bff156;
+      cursor: pointer;
+      margin:0;
+      padding: 10px;
+    }
+    .box h3.up {
+      color: #ded8c8;
+      background: #bff156 url("down.png") no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("h3").click(function(){
+      var box = $(this).parent();
+      $("ul", box).slideToggle("fast");
+      $(this).toggleClass("up");
+    });
+  });
+  </script>
+
+<div class="box">
+  <h3 class="boxTitle">Product 1</h3>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+
+<div class="box">
+  <h3 class="boxTitle">Product 2</h3>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+
+<div class="box">
+  <h3 class="boxTitle">Product 3</h3>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+
+</body>
+</html>

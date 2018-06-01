@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal Dialog</title>
+<style>
+#overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  display: none;
+  cursor:pointer;
+}
+
+#dialog {
+  display: none;
+  position: absolute;
+  left: 35%;
+  top:16%;
+  width: 30%;
+  border: 4px solid #ddd;
+  background: #fff;
+}
+
+#dialog h2 {
+    font-size: 17px;
+    margin: 0;
+    padding: 8px;
+    background: #ddd;
+}
+
+#dialog form {
+  padding: 20px;
+}
+
+#close {
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 8px;
+  background: #d22525;
+  float: right;
+}
+</style>
+
+</head>
+<body>
+<p>
+  This is a paragraph.
+</p>
+<button id="contact" onclick="show()">Contact</button>
+<div id="overlay" onclick="hide()"></div>
+<div id="dialog">
+<h2>Contact Me <span id="close" onclick="hide()">&times;</span> </h2>
+<form class="" action="" method="post">
+  <input type="text" placeholder="Your Email"><br>
+  <textarea name="" id="" cols="30" rows="10" placeholder="Say Something..."></textarea><br>
+  <input type="submit" name="OK" id="">
+</form>
+</div>
+
+<script>
+function show(){
+  document.getElementById('overlay').style.display="block";
+  document.getElementById('dialog').style.display="block";
+}
+
+function hide(){
+  document.getElementById('overlay').style.display="none";
+  document.getElementById('dialog').style.display="none";
+}
+</script>
+</body>
+</html>

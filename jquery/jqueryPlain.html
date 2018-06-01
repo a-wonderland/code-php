@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery</title>
+</head>
+<body>
+  <p>Hello World!</p>
+  <button>Click Me</button>
+  <a href="#">Show Hide</a>
+
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $('button').click(function(){
+      $('p').html("Hello Jquery!").css('color', 'red').css('background', 'black');
+    });
+
+    $('a').click(function() {
+      $('p').toggle('slow', function(){
+        alert('Done');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>layout</title>
+<style media="screen">
+  .wrap {
+    width: 800px;
+    margin: auto;
+    background: gray;
+  }
+
+  .header {
+    /* width: 800px; */
+    height: 200px;
+    background: red;
+  }
+
+  .slidebar {
+    width: 176px;
+    height: 176px;
+    background: green;
+    float: left;
+    padding: 10px;
+    color: white;
+    margin: 2px;
+  }
+
+  .content {
+    width: 576px;
+    height: 176px;
+    background: yellow;
+    float: left;
+    padding: 10px;
+    color: black;
+    margin: 2px;
+  }
+
+  .footer {
+    /* width: 800px; */
+    height: 50px;
+    background: black;
+    clear: both;
+  }
+
+  .nav,
+  .sub {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
+
+  .nav li {
+    width: 198px;
+    height: 30px;
+    background: pink;
+  }
+
+  .nav li a {
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    display: block;
+  }
+
+  .nav > li {
+    float: left;
+    border-right: 2px solid white;
+  }
+#l1 {
+  display: block;
+  width: 200px;
+  height: 30px;
+  background: red;
+}
+#l2 {
+  background: green;
+  display: block;
+  /* width: 200px;
+  height: 30px; */
+}
+
+.sub li{
+  display: none;
+}
+
+.nav li:hover .sub li{
+  display: block;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul class="nav">
+      <li><a href="#">Home</a> </li>
+      <li> <a href="#">About</a> </li>
+    <li>
+  <a href="#">Product &raquo;</a>
+  <ul class="sub">
+    <li><a href="#">ProductA</a></li>
+      <li><a href="#">ProductB</a></li>
+      <li><a href="#">ProductC</a></li>
+      <li><a href="#">ProductD</a></li>
+    </ul>
+  </li>
+  <li><a href="#">More</a></li>
+
+</ul>
+
+<div class="header">
+
+</div>
+<div class="slidebar">
+Slidebar
+</div>
+<div class="content">
+Content
+</div>
+<div class="footer">
+
+</div>
+</div>
+<a href="#" id="l1">link 1</a>
+<a href="#" id="l2">link 2</a>
+
+  </body>
+</html>

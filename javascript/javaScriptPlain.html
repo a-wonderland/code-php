@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Plain</title>
+</head>
+
+<body>
+  <p id="note">
+    This is a paragraph.
+  </p>
+  <button id="noteBtn" onclick="changeText()">Change</button>
+  <script>
+    function changeText() {
+      var note = document.getElementById("note");
+      note.innerHTML = "Hellow World!";
+      note.style.color = "#6e673a";
+      note.style.background = "#979df1";
+      note.style.border = "1px solid #6e673a";
+    }
+  </script>
+</body>
+
+</html>
